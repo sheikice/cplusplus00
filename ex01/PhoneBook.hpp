@@ -12,6 +12,7 @@ using namespace std;
 # define EMPTY ""
 # define NEW_LINE '\n'
 # define EXIT "EXIT"
+# define SEARCH "SEARCH"
 # define ADD "ADD"
 
 class	PhoneBook

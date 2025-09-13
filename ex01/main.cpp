@@ -10,7 +10,7 @@ int	main()
 		getline(cin, line = EMPTY, NEW_LINE);
 		if (line == ADD)
 			repo.add();
-		if (line == "SEARCH")
+		if (line == SEARCH)
 			repo.search();
 	}
 	cout << endl;

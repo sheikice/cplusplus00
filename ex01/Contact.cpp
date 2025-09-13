@@ -2,11 +2,11 @@
 
 Contact::Contact(void)
 {
-	this->first_name = "";
-	this->last_name = "";
-	this->nickname = "";
-	this->phone_number = "";
-	this->darkest_secret = "";
+	this->first_name = EMPTY;
+	this->last_name = EMPTY;
+	this->nickname = EMPTY;
+	this->phone_number = EMPTY;
+	this->darkest_secret = EMPTY;
 	return ;
 }
 
@@ -17,7 +17,7 @@ Contact::~Contact(void)
 
 void	Contact::arg_setter(string request, string& arg)
 {
-	while (cin && arg == "")
+	while (cin && arg == EMPTY)
 	{
 		cout << request;
 		getline(cin, arg, '\n');
@@ -61,9 +61,9 @@ void	Contact::contact_previsu(int index)
 
 void	Contact::show_contact_info(void)
 {
-	cout << "\nfirst name: " << this->first_name << "\n";
-	cout << "last name: " << this->last_name << "\n";
-	cout << "nickname: " << this->nickname << "\n";
-	cout << "phone number: " << this->phone_number << "\n";
-	cout << "darkest secret: " << this->darkest_secret << endl;
+	cout << "\n" << FIRST_NAME << this->first_name << "\n";
+	cout << LAST_NAME << this->last_name << "\n";
+	cout << NICKNAME << this->nickname << "\n";
+	cout << PHONE_NUMBER << this->phone_number << "\n";
+	cout << DARKEST_SECRET << this->darkest_secret << endl;
 }

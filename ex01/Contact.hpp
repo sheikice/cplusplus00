@@ -5,6 +5,7 @@
 # include <iomanip>
 using namespace std;
 
+# define EMPTY ""
 # define FIRST_NAME "first name: "
 # define LAST_NAME "last name: "
 # define NICKNAME "nickname: "
