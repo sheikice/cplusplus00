@@ -6,7 +6,7 @@
 /*   By: jwuille <jwuille@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 21:18:07 by jwuille           #+#    #+#             */
-/*   Updated: 2025/09/14 17:39:18 by jwuille          ###   ########.fr       */
+/*   Updated: 2025/09/14 17:46:06 by jwuille          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <iostream>
 #include <iomanip>
 #include <ctime>
-
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
@@ -27,7 +26,7 @@ Account::Account( void )
 	Account::_nbAccounts++;
 
 	Account::_displayTimestamp();
-	std::cout << ""
+	std::cout
 		<< "index:" << this->_accountIndex << ";"
 		<< "amount:" << this->_amount << ";"
 		<< "created"
@@ -43,7 +42,7 @@ Account::Account( int deposit )
 	Account::_nbAccounts++;
 
 	Account::_displayTimestamp();
-	std::cout << ""
+	std::cout
 		<< "index:" << this->_accountIndex << ";"
 		<< "amount:" << this->_amount << ";"
 		<< "created"
@@ -56,7 +55,7 @@ Account::~Account( void)
 	Account::_nbAccounts--;
 
 	Account::_displayTimestamp();
-	std::cout << ""
+	std::cout
 		<< "index:" << this->_accountIndex << ";"
 		<< "amount:" << this->_amount << ";"
 		<< "closed"
@@ -127,7 +126,7 @@ void	Account::makeDeposit( int deposit )
 		<< "p_amount:" << p_amount << ";"
 		<< "deposit:" << deposit << ";"
 		<< "amount:" << checkAmount() << ";"
-		<< "nbDeposits:" << this->_nbDeposits
+		<< "nb_deposits:" << this->_nbDeposits
 		<< '\n';
 	return ;
 }
@@ -155,7 +154,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	std::cout
 		<< withdrawal << ";"
 		<< "amount:" << checkAmount() << ";"
-		<< "nbWithdrawals:" << this->_nbWithdrawals
+		<< "nb_withdrawals:" << this->_nbWithdrawals
 		<< '\n';
 	return (true);
 }
