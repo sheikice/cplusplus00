@@ -6,7 +6,7 @@
 /*   By: jwuille <jwuille@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 21:18:07 by jwuille           #+#    #+#             */
-/*   Updated: 2025/09/14 17:35:44 by jwuille          ###   ########.fr       */
+/*   Updated: 2025/09/14 17:39:18 by jwuille          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	Account::_totalNbWithdrawals = 0;
 
 Account::Account( void )
 {
-
 	this->_accountIndex = getNbAccounts();
 	Account::_nbAccounts++;
 
@@ -54,6 +53,14 @@ Account::Account( int deposit )
 
 Account::~Account( void)
 {
+	Account::_nbAccounts--;
+
+	Account::_displayTimestamp();
+	std::cout << ""
+		<< "index:" << this->_accountIndex << ";"
+		<< "amount:" << this->_amount << ";"
+		<< "closed"
+		<< "\n";
 	return ;
 }
 
