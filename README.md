@@ -2,7 +2,7 @@
 
 ## *Ex 00*
 ### 🎯 <ins>Objective</ins>
-Create a program that change a user input into an `uppercased string`.
+Create a program that changes a user input into an `uppercased string`.
 ### 📖 <ins>Learning</ins>
 - streams
  - cout <<
