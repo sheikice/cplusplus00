@@ -1,25 +1,25 @@
 # cplusplus00
 
-### Ex 00
-## Objective
+## Ex 00
+### Objective
 Create a program that change a user input into an uppercased string.
-## Learning
+### Learning
 - streams
   - cout <<
   - cin >>
 - getline
 ***
-### Ex 01
-## Objective
+## Ex 01
+### Objective
 Create a program that simulate a simple phonebook.
-## Learning
+### Learning
 - Classes and instances
 - Methods and class attributes
 ***
-### Ex 02
-## Objective
+## Ex 02
+### Objective
 Recreate a lost cpp file based on a tester file and a .hpp.
-## Learning
+### Learning
 - static members
 - time print + formatting (fn:put time)
 ***
