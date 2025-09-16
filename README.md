@@ -21,6 +21,16 @@ Create a program that simulate a simple `phonebook`
 - Classes and instances
 - Methods and class attributes
 
+> [!NOTE]
+> `cin` stream can be `closed` with EOF.
+> It's important to check `cin` in the getline loop
+> ```cpp
+>  while (cin && line == "")
+> {
+>     getline(cin, line);
+> }
+> ```
+
 ### ✍️ <ins>Usage</ins>
 ```bash
 ./phonebook
@@ -50,15 +60,6 @@ Recreate a lost `cpp file` based on a tester file and a .hpp.
 - static members
 - time print + formatting (fn:put time)
 
-> [!NOTE]
-> `cin` stream can be `closed` with EOF.
-> It's important to check `cin` in the getline loop
-> ```cpp
->  while (cin && line == "")
-> {
->     getline(cin, line);
-> }
-> ```
 ### ✍️ <ins>Usage</ins>
 ```bash
 ./tests
