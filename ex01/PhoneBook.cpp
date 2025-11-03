@@ -38,28 +38,28 @@ void	PhoneBook::add(void)
 
 void	PhoneBook::previsualisation(void)
 {
-	cout << "\n";
-	cout << "--------------------------------------------\n";
-	cout << "     index|first name|  lastname|  nickname|\n";
-	cout << "----------|----------|----------|----------|\n";
+	std::cout << "\n";
+	std::cout << "--------------------------------------------\n";
+	std::cout << "     index|first name|  lastname|  nickname|\n";
+	std::cout << "----------|----------|----------|----------|\n";
 	for(int i = 0; i < this->contact_number; i++)
 		(this->contacts[i]).contact_previsu(i + 1);
-	cout << "--------------------------------------------\n";
+	std::cout << "--------------------------------------------\n";
 	return ;
 }
 
 void	PhoneBook::search(void)
 {
 	int		choice = -1;
-	string	line ("");
+	std::string	line ("");
 
 	previsualisation();
-	while (cin && (choice <= 0 || choice > this->contact_number))
+	while (std::cin && (choice <= 0 || choice > this->contact_number))
 	{
-		cout << CONTACT_SELECT_REQUEST;
-		getline(cin, line = "", '\n');
+		std::cout << CONTACT_SELECT_REQUEST;
+		getline(std::cin, line = "", '\n');
 		if (line != "")
-			stringstream(line) >> choice;
+			std::stringstream(line) >> choice;
 	}
 	if (choice > 0)
 		this->contacts[choice - 1].show_contact_info();

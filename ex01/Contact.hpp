@@ -3,7 +3,6 @@
 # include <string>
 # include <iostream>
 # include <iomanip>
-using namespace std;
 
 # define EMPTY ""
 # define FIRST_NAME "first name: "
@@ -15,14 +14,14 @@ using namespace std;
 class	Contact
 {
 	private:
-		string	first_name;
-		string	last_name;
-		string	nickname;
-		string	phone_number;
-		string	darkest_secret;
-		void	arg_setter(string request, string& arg);
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nickname;
+		std::string	phone_number;
+		std::string	darkest_secret;
+		void	arg_setter(std::string request, std::string& arg);
 		void	field_previsu(int index);
-		void	field_previsu(string arg);
+		void	field_previsu(std::string arg);
 
 	public:
 		Contact(void);

@@ -4,7 +4,6 @@
 # include <iostream>
 # include <sstream>
 # include "Contact.hpp"
-using namespace std;
 
 # define MAX_CONTACT 8
 # define CONTACT_SELECT_REQUEST "\nCHOSE INDEX: ";

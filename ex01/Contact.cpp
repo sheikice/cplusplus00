@@ -15,12 +15,12 @@ Contact::~Contact(void)
 	return ;
 }
 
-void	Contact::arg_setter(string request, string& arg)
+void	Contact::arg_setter(std::string request, std::string& arg)
 {
-	while (cin && arg == EMPTY)
+	while (std::cin && arg == EMPTY)
 	{
-		cout << request;
-		getline(cin, arg, '\n');
+		std::cout << request;
+		getline(std::cin, arg, '\n');
 	}
 }
 
@@ -35,17 +35,17 @@ void	Contact::data_setter(void)
 
 void	Contact::field_previsu(int index)
 {
-	cout << setw(10) << index << "|";
+	std::cout << std::setw(10) << index << "|";
 }
 
-void	Contact::field_previsu(string arg)
+void	Contact::field_previsu(std::string arg)
 {
 	if (arg.length() <= 10)
-		cout << setw(10) << arg << "|";
+		std::cout << std::setw(10) << arg << "|";
 	else
 	{
 		arg.resize(9);
-		cout << setw(9) << arg << ".|";
+		std::cout << std::setw(9) << arg << ".|";
 	}
 }
 
@@ -55,15 +55,15 @@ void	Contact::contact_previsu(int index)
 	field_previsu(first_name);
 	field_previsu(last_name);
 	field_previsu(nickname);
-	cout << endl;
+	std::cout << std::endl;
 	return ;
 }
 
 void	Contact::show_contact_info(void)
 {
-	cout << "\n" << FIRST_NAME << this->first_name << "\n";
-	cout << LAST_NAME << this->last_name << "\n";
-	cout << NICKNAME << this->nickname << "\n";
-	cout << PHONE_NUMBER << this->phone_number << "\n";
-	cout << DARKEST_SECRET << this->darkest_secret << endl;
+	std::cout << "\n" << FIRST_NAME << this->first_name << "\n";
+	std::cout << LAST_NAME << this->last_name << "\n";
+	std::cout << NICKNAME << this->nickname << "\n";
+	std::cout << PHONE_NUMBER << this->phone_number << "\n";
+	std::cout << DARKEST_SECRET << this->darkest_secret << std::endl;
 }

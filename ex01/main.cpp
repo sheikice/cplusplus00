@@ -3,16 +3,16 @@
 int	main()
 {
 	PhoneBook	repo;
-	string		line;
-	while(cin && line != EXIT)
+	std::string		line;
+	while(std::cin && line != EXIT)
 	{
-		cout << FIRST_REQUEST;
-		getline(cin, line = EMPTY, NEW_LINE);
+		std::cout << FIRST_REQUEST;
+		getline(std::cin, line = EMPTY, NEW_LINE);
 		if (line == ADD)
 			repo.add();
 		if (line == SEARCH)
 			repo.search();
 	}
-	cout << endl;
+	std::cout << std::endl;
 	return (0);
 }
