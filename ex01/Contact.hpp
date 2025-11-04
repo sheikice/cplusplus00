@@ -17,7 +17,7 @@ class	Contact
 		std::string	_nickName;
 		std::string	_phoneNumber;
 		std::string	_darkestSecret;
-		void		_argSetter(std::string request, std::string& arg);
+		void		_fieldSetter(std::string request, std::string& arg);
 		void		_fieldPreview(int index);
 		void		_fieldPreview(std::string arg);
 };

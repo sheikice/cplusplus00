@@ -14,7 +14,7 @@ Contact::~Contact(void)
 	return ;
 }
 
-void	Contact::_argSetter(std::string request, std::string& arg)
+void	Contact::_fieldSetter(std::string request, std::string& arg)
 {
 	while (std::cin && arg == "")
 	{
@@ -25,11 +25,11 @@ void	Contact::_argSetter(std::string request, std::string& arg)
 
 void	Contact::dataSetter(void)
 {
-	_argSetter("first name: ", this->_firstName);
-	_argSetter("last name: ", this->_lastName);
-	_argSetter("nickname: ", this->_nickName);
-	_argSetter("phone number: ", this->_phoneNumber);
-	_argSetter("darkest secret: ", this->_darkestSecret);
+	_fieldSetter("first name: ", this->_firstName);
+	_fieldSetter("last name: ", this->_lastName);
+	_fieldSetter("nickname: ", this->_nickName);
+	_fieldSetter("phone number: ", this->_phoneNumber);
+	_fieldSetter("darkest secret: ", this->_darkestSecret);
 }
 
 void	Contact::_fieldPreview(int index)
