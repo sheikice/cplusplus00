@@ -1,16 +1,17 @@
 #include "PhoneBook.hpp"
+#include <iostream>
 
 int	main()
 {
 	PhoneBook	repo;
 	std::string		line;
-	while(std::cin && line != EXIT)
+	while(std::cin && line != "EXIT")
 	{
-		std::cout << FIRST_REQUEST;
-		getline(std::cin, line = EMPTY, NEW_LINE);
-		if (line == ADD)
+		std::cout << "ADD, SEARCH or EXIT: ";
+		getline(std::cin, line = "", '\n');
+		if (line == "ADD")
 			repo.add();
-		if (line == SEARCH)
+		if (line == "SEARCH")
 			repo.search();
 	}
 	std::cout << std::endl;
