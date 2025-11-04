@@ -3,6 +3,7 @@
 #include <sstream>
 #include <string>
 
+const int PhoneBook::_MAX_CONTACTS;
 
 PhoneBook::PhoneBook(void) : _contactCount(0)
 {
