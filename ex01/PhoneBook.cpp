@@ -3,9 +3,9 @@
 #include <sstream>
 #include <string>
 
-PhoneBook::PhoneBook(void)
+
+PhoneBook::PhoneBook(void) : _contactCount(0)
 {
-	this->_contact_number = 0;
 	return ;
 }
 
@@ -14,10 +14,10 @@ PhoneBook::~PhoneBook(void)
 	return ;
 }
 
-void	PhoneBook::_contact_reorganise(void)
+void	PhoneBook::_contactReorganise(void)
 {
-	for(int i = 0; i + 1 < MAX_CONTACT; i++)
-		this->contacts[i] = this->contacts[i + 1];
+	for(int i = 0; i + 1 < _MAX_CONTACTS; i++)
+		this->_contacts[i] = this->_contacts[i + 1];
 	return ;
 }
 
@@ -25,28 +25,28 @@ void	PhoneBook::add(void)
 {
 	Contact	new_contact;
 
-	new_contact.data_setter();
-	if (_contact_number == MAX_CONTACT)
+	new_contact.dataSetter();
+	if (_contactCount == _MAX_CONTACTS)
 	{
-		_contact_reorganise();
-		this->contacts[MAX_CONTACT - 1] = new_contact;
+		_contactReorganise();
+		this->_contacts[_MAX_CONTACTS - 1] = new_contact;
 	}
 	else
 	{
-		this->contacts[this->_contact_number] = new_contact;
-		this->_contact_number++;
+		this->_contacts[this->_contactCount] = new_contact;
+		this->_contactCount++;
 	}
 	return ;
 }
 
-void	PhoneBook::_previsualisation(void)
+void	PhoneBook::_phoneBookPreview(void)
 {
 	std::cout << "\n";
 	std::cout << "--------------------------------------------\n";
 	std::cout << "     index|first name|  lastname|  nickname|\n";
 	std::cout << "----------|----------|----------|----------|\n";
-	for(int i = 0; i < this->_contact_number; i++)
-		(this->contacts[i]).contact_previsu(i + 1);
+	for(int i = 0; i < this->_contactCount; i++)
+		(this->_contacts[i]).contactPreview(i + 1);
 	std::cout << "--------------------------------------------\n";
 	return ;
 }
@@ -56,8 +56,8 @@ void	PhoneBook::search(void)
 	int		choice = -1;
 	std::string	line ("");
 
-	_previsualisation();
-	while (std::cin && (choice <= 0 || choice > this->_contact_number))
+	_phoneBookPreview();
+	while (std::cin && (choice <= 0 || choice > this->_contactCount))
 	{
 		std::cout << "\nCHOSE INDEX: ";
 		getline(std::cin, line = "", '\n');
@@ -65,6 +65,6 @@ void	PhoneBook::search(void)
 			std::stringstream(line) >> choice;
 	}
 	if (choice > 0)
-		this->contacts[choice - 1].show_contact_info();
+		this->_contacts[choice - 1].showContactInfo();
 	return ;
 }

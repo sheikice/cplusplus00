@@ -3,9 +3,10 @@
 
 int	main()
 {
-	PhoneBook	repo;
+	PhoneBook		repo;
 	std::string		line;
-	while(std::cin && line != "EXIT")
+
+	while (std::cin && line != "EXIT")
 	{
 		std::cout << "ADD, SEARCH or EXIT: ";
 		getline(std::cin, line = "", '\n');

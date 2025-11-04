@@ -2,13 +2,10 @@
 #include <iomanip>
 #include <iostream>
 
-Contact::Contact(void)
+Contact::Contact(void) :
+	_firstName(""), _lastName(""), _nickName(""),
+	_phoneNumber(""), _darkestSecret("")
 {
-	this->_first_name = "";
-	this->_last_name = "";
-	this->_nickname = "";
-	this->_phone_number = "";
-	this->_darkest_secret = "";
 	return ;
 }
 
@@ -17,7 +14,7 @@ Contact::~Contact(void)
 	return ;
 }
 
-void	Contact::_arg_setter(std::string request, std::string& arg)
+void	Contact::_argSetter(std::string request, std::string& arg)
 {
 	while (std::cin && arg == "")
 	{
@@ -26,21 +23,21 @@ void	Contact::_arg_setter(std::string request, std::string& arg)
 	}
 }
 
-void	Contact::data_setter(void)
+void	Contact::dataSetter(void)
 {
-	_arg_setter("first name: ", this->_first_name);
-	_arg_setter("last name: ", this->_last_name);
-	_arg_setter("nickname: ", this->_nickname);
-	_arg_setter("phone number: ", this->_phone_number);
-	_arg_setter("darkest secret: ", this->_darkest_secret);
+	_argSetter("first name: ", this->_firstName);
+	_argSetter("last name: ", this->_lastName);
+	_argSetter("nickname: ", this->_nickName);
+	_argSetter("phone number: ", this->_phoneNumber);
+	_argSetter("darkest secret: ", this->_darkestSecret);
 }
 
-void	Contact::_field_previsu(int index)
+void	Contact::_fieldPreview(int index)
 {
 	std::cout << std::setw(10) << index << "|";
 }
 
-void	Contact::_field_previsu(std::string arg)
+void	Contact::_fieldPreview(std::string arg)
 {
 	if (arg.length() <= 10)
 		std::cout << std::setw(10) << arg << "|";
@@ -51,21 +48,21 @@ void	Contact::_field_previsu(std::string arg)
 	}
 }
 
-void	Contact::contact_previsu(int index)
+void	Contact::contactPreview(int index)
 {
-	_field_previsu(index);
-	_field_previsu(_first_name);
-	_field_previsu(_last_name);
-	_field_previsu(_nickname);
+	_fieldPreview(index);
+	_fieldPreview(_firstName);
+	_fieldPreview(_lastName);
+	_fieldPreview(_nickName);
 	std::cout << std::endl;
 	return ;
 }
 
-void	Contact::show_contact_info(void)
+void	Contact::showContactInfo(void)
 {
-	std::cout << "\n" << "first name: " << this->_first_name << "\n";
-	std::cout << "last name: " << this->_last_name << "\n";
-	std::cout << "nickname: " << this->_nickname << "\n";
-	std::cout << "phone number: " << this->_phone_number << "\n";
-	std::cout << "darkest secret: " << this->_darkest_secret << std::endl;
+	std::cout << "\n" << "first name: " << this->_firstName << "\n";
+	std::cout << "last name: " << this->_lastName << "\n";
+	std::cout << "nickname: " << this->_nickName << "\n";
+	std::cout << "phone number: " << this->_phoneNumber << "\n";
+	std::cout << "darkest secret: " << this->_darkestSecret << std::endl;
 }

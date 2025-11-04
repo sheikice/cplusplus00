@@ -7,19 +7,19 @@ class	Contact
 	public:
 		Contact(void);
 		~Contact(void);
-		void	data_setter(void);
-		void	contact_previsu(int index);
-		void	show_contact_info(void);
+		void	dataSetter(void);
+		void	contactPreview(int index);
+		void	showContactInfo(void);
 
 	private:
-		std::string	_first_name;
-		std::string	_last_name;
-		std::string	_nickname;
-		std::string	_phone_number;
-		std::string	_darkest_secret;
-		void	_arg_setter(std::string request, std::string& arg);
-		void	_field_previsu(int index);
-		void	_field_previsu(std::string arg);
+		std::string	_firstName;
+		std::string	_lastName;
+		std::string	_nickName;
+		std::string	_phoneNumber;
+		std::string	_darkestSecret;
+		void		_argSetter(std::string request, std::string& arg);
+		void		_fieldPreview(int index);
+		void		_fieldPreview(std::string arg);
 };
 
 #endif
