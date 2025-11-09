@@ -1,5 +1,6 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
+
 # include <string>
 
 class	Contact
@@ -7,9 +8,10 @@ class	Contact
 	public:
 		Contact(void);
 		~Contact(void);
-		void	dataSetter(void);
-		void	contactPreview(int index);
-		void	showContactInfo(void);
+
+		void	setContactInfo(void);
+		void	previewContact(int index) const;
+		void	showContactInfo(void) const;
 
 	private:
 		std::string	_firstName;
@@ -17,9 +19,9 @@ class	Contact
 		std::string	_nickName;
 		std::string	_phoneNumber;
 		std::string	_darkestSecret;
-		void		_fieldSetter(std::string request, std::string& arg);
-		void		_fieldPreview(int index);
-		void		_fieldPreview(std::string arg);
+		void		_setField(const std::string& request, std::string& arg);
+		void		_previewField(int index) const;
+		void		_previewField(std::string arg) const;
 };
 
 #endif

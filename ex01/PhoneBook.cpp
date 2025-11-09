@@ -5,67 +5,61 @@
 
 const int PhoneBook::_MAX_CONTACTS;
 
-PhoneBook::PhoneBook(void) : _contactCount(0)
-{
-	return ;
-}
+PhoneBook::PhoneBook(void) : _contactCount(0) { }
 
-PhoneBook::~PhoneBook(void)
-{
-	return ;
-}
+PhoneBook::~PhoneBook(void) { }
 
-void	PhoneBook::_contactReorganise(void)
+void	PhoneBook::_reorganiseContact(void)
 {
 	for(int i = 0; i + 1 < _MAX_CONTACTS; i++)
-		this->_contacts[i] = this->_contacts[i + 1];
-	return ;
+		_contacts[i] = _contacts[i + 1];
 }
 
 void	PhoneBook::add(void)
 {
 	Contact	new_contact;
 
-	new_contact.dataSetter();
+	new_contact.setContactInfo();
 	if (_contactCount == _MAX_CONTACTS)
 	{
-		_contactReorganise();
-		this->_contacts[_MAX_CONTACTS - 1] = new_contact;
+		_reorganiseContact();
+		_contacts[_MAX_CONTACTS - 1] = new_contact;
 	}
 	else
 	{
-		this->_contacts[this->_contactCount] = new_contact;
-		this->_contactCount++;
+		_contacts[_contactCount] = new_contact;
+		_contactCount++;
 	}
-	return ;
 }
 
-void	PhoneBook::_phoneBookPreview(void)
+void	PhoneBook::_previewPhoneBook(void)
 {
 	std::cout << "\n";
 	std::cout << "--------------------------------------------\n";
 	std::cout << "     index|first name|  lastname|  nickname|\n";
 	std::cout << "----------|----------|----------|----------|\n";
 	for(int i = 0; i < this->_contactCount; i++)
-		(this->_contacts[i]).contactPreview(i + 1);
+		(this->_contacts[i]).previewContact(i + 1);
 	std::cout << "--------------------------------------------\n";
-	return ;
 }
 
 void	PhoneBook::search(void)
 {
-	int		choice = -1;
+	int			choice = -1;
 	std::string	line ("");
 
-	_phoneBookPreview();
-	while (std::cin && (choice <= 0 || choice > this->_contactCount))
+	if (_contactCount == 0)
+	{
+		std::cout << "No contact in the list yet." << std::endl;
+		return ;
+	}
+	_previewPhoneBook();
+	while (std::cin.good() && (choice <= 0 || choice > _contactCount))
 	{
 		std::cout << "\nCHOSE INDEX: ";
 		getline(std::cin, line = "", '\n');
-		if (line != "")
+		if (!line.empty())
 			std::stringstream(line) >> choice;
 	}
-	if (choice > 0)
-		this->_contacts[choice - 1].showContactInfo();
-	return ;
+	_contacts[choice - 1].showContactInfo();
 }

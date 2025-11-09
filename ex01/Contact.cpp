@@ -3,41 +3,35 @@
 #include <iostream>
 
 Contact::Contact(void) :
-	_firstName(""), _lastName(""), _nickName(""),
-	_phoneNumber(""), _darkestSecret("")
-{
-	return ;
-}
+	_firstName(""), _lastName(""), _nickName(""), _phoneNumber(""),
+	_darkestSecret("") { }
 
-Contact::~Contact(void)
-{
-	return ;
-}
+Contact::~Contact(void) { }
 
-void	Contact::_fieldSetter(std::string request, std::string& arg)
+void	Contact::_setField(const std::string& request, std::string& arg)
 {
-	while (std::cin && arg == "")
-	{
+	do {
 		std::cout << request;
 		getline(std::cin, arg, '\n');
 	}
+	while (std::cin.good() && arg.empty());
 }
 
-void	Contact::dataSetter(void)
+void	Contact::setContactInfo(void)
 {
-	_fieldSetter("first name: ", this->_firstName);
-	_fieldSetter("last name: ", this->_lastName);
-	_fieldSetter("nickname: ", this->_nickName);
-	_fieldSetter("phone number: ", this->_phoneNumber);
-	_fieldSetter("darkest secret: ", this->_darkestSecret);
+	_setField("\nfirst name: ", _firstName);
+	_setField("last name: ", _lastName);
+	_setField("nickname: ", _nickName);
+	_setField("phone number: ", _phoneNumber);
+	_setField("darkest secret: ", _darkestSecret);
 }
 
-void	Contact::_fieldPreview(int index)
+void	Contact::_previewField(int index) const
 {
 	std::cout << std::setw(10) << index << "|";
 }
 
-void	Contact::_fieldPreview(std::string arg)
+void	Contact::_previewField(std::string arg) const
 {
 	if (arg.length() <= 10)
 		std::cout << std::setw(10) << arg << "|";
@@ -48,21 +42,20 @@ void	Contact::_fieldPreview(std::string arg)
 	}
 }
 
-void	Contact::contactPreview(int index)
+void	Contact::previewContact(int index) const
 {
-	_fieldPreview(index);
-	_fieldPreview(_firstName);
-	_fieldPreview(_lastName);
-	_fieldPreview(_nickName);
+	_previewField(index);
+	_previewField(_firstName);
+	_previewField(_lastName);
+	_previewField(_nickName);
 	std::cout << std::endl;
-	return ;
 }
 
-void	Contact::showContactInfo(void)
+void	Contact::showContactInfo(void) const
 {
-	std::cout << "\n" << "first name: " << this->_firstName << "\n";
-	std::cout << "last name: " << this->_lastName << "\n";
-	std::cout << "nickname: " << this->_nickName << "\n";
-	std::cout << "phone number: " << this->_phoneNumber << "\n";
-	std::cout << "darkest secret: " << this->_darkestSecret << std::endl;
+	std::cout << "\n" << "first name: " << _firstName << "\n"
+		<< "last name: " << _lastName << "\n"
+		<< "nickname: " << _nickName << "\n"
+		<< "phone number: " << _phoneNumber << "\n"
+		<< "darkest secret: " << _darkestSecret <<  std::endl;
 }

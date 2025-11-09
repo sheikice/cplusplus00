@@ -3,17 +3,17 @@
 
 int	main()
 {
-	PhoneBook		repo;
+	PhoneBook		phoneBook;
 	std::string		line;
 
-	while (std::cin && line != "EXIT")
+	while (std::cin.good() && line != "EXIT")
 	{
-		std::cout << "ADD, SEARCH or EXIT: ";
+		std::cout << "\nADD, SEARCH or EXIT: ";
 		getline(std::cin, line = "", '\n');
 		if (line == "ADD")
-			repo.add();
+			phoneBook.add();
 		if (line == "SEARCH")
-			repo.search();
+			phoneBook.search();
 	}
 	std::cout << std::endl;
 	return (0);

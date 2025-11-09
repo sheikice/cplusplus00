@@ -3,7 +3,6 @@
 
 # include "Contact.hpp"
 
-
 class	PhoneBook
 {
 	public:
@@ -17,10 +16,9 @@ class	PhoneBook
 		static const int	_MAX_CONTACTS = 8;
 		Contact				_contacts[_MAX_CONTACTS];
 		int					_contactCount;
-		void				_contactReorganise(void);
-		void				_contactPreview(void);
-		void				_phoneBookPreview(void);
-
+		void				_reorganiseContact(void);
+		void				_previewContact(void);
+		void				_previewPhoneBook(void);
 };
 
 #endif
