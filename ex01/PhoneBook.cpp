@@ -3,8 +3,6 @@
 #include <sstream>
 #include <string>
 
-const int PhoneBook::_MAX_CONTACTS;
-
 PhoneBook::PhoneBook(void) : _contactCount(0) { }
 
 PhoneBook::~PhoneBook(void) { }
@@ -61,5 +59,6 @@ void	PhoneBook::search(void)
 		if (!line.empty())
 			std::stringstream(line) >> choice;
 	}
-	_contacts[choice - 1].showContactInfo();
+	if (std::cin.good() && choice > 0)
+		_contacts[choice - 1].showContactInfo();
 }
