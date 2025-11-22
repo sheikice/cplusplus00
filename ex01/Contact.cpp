@@ -8,22 +8,27 @@ Contact::Contact(void) :
 
 Contact::~Contact(void) { }
 
-void	Contact::_setField(const std::string& request, std::string& arg)
+bool	Contact::_setField(const std::string& request, std::string& arg)
 {
 	do {
 		std::cout << request;
 		getline(std::cin, arg, '\n');
 	}
 	while (std::cin.good() && arg.empty());
+	if (std::cin.good())
+		return (true);
+	return (false);
 }
 
 void	Contact::setContactInfo(void)
 {
-	_setField("\nfirst name: ", _firstName);
-	_setField("last name: ", _lastName);
-	_setField("nickname: ", _nickName);
-	_setField("phone number: ", _phoneNumber);
-	_setField("darkest secret: ", _darkestSecret);
+	if (!_setField("\nfirst name: ", _firstName)
+	|| !_setField("last name: ", _lastName)
+	|| !_setField("nickname: ", _nickName)
+	|| !_setField("phone number: ", _phoneNumber)
+	|| !_setField("darkest secret: ", _darkestSecret))
+		return ;
+
 }
 
 void	Contact::_previewField(int index) const

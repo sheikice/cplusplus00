@@ -19,7 +19,7 @@ class	Contact
 		std::string	_nickName;
 		std::string	_phoneNumber;
 		std::string	_darkestSecret;
-		void		_setField(const std::string& request, std::string& arg);
+		bool		_setField(const std::string& request, std::string& arg);
 		void		_previewField(int index) const;
 		void		_previewField(std::string arg) const;
 };
