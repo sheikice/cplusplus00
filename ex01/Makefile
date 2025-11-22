@@ -6,7 +6,7 @@
 #    By: jwuille <jwuille@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/30 17:58:14 by jwuille           #+#    #+#              #
-#    Updated: 2025/09/11 16:14:10 by jwuille          ###   ########.fr        #
+#    Updated: 2025/11/22 15:44:03 by jwuille          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC =	main.cpp \
 
 CC = c++ -MD -std=c++98
 CFLAGS = -Wall -Werror -Wextra -g3
-NAME = PhoneBook
+NAME = phoneBook
 
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
 
